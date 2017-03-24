@@ -1,0 +1,7 @@
+rule "add file_created field"
+when
+  has_field("sysmon_data_file_created")
+then
+    let m = regex("([^/\\\\]+$)", to_string($message.sysmon_data_file_created));
+    set_field("file_created", m["0"]);
+end
