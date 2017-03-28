@@ -76,6 +76,116 @@ when
 	contains(to_string($message.sysmon_cmd_event), "shareenum", true) ||
 	contains(to_string($message.sysmon_cmd_event), "reg.exe", true) ||
 	contains(to_string($message.sysmon_cmd_event), "regedit", true) ||
+	contains(to_string($message.sysmon_cmd_event), "certutil.exe -decode", true) ||
+	contains(to_string($message.sysmon_cmd_event), "sekurlsa", true) ||
+	contains(to_string($message.sysmon_cmd_event), "net localgroup adminstrators", true) ||
+	contains(to_string($message.sysmon_cmd_event), "net group ", true) ||
+	contains(to_string($message.sysmon_cmd_event), "schtasks /create", true) ||
+	contains(to_string($message.sysmon_cmd_event), "reg SAVE", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Invoke-DllInjection", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Invoke-Shellcode", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Invoke-WmiCommand", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Get-GPPPassword", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Get-Keystrokes", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Get-TimedScreenshot", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Get-VaultCredential", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Invoke-CredentialInjection", true) ||
+	contains(to_string($message.sysmon_cmd_event), "mimikatz", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Invoke-NinjaCopy", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Invoke-TokenManipulation", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Out-Minidump", true) ||
+	contains(to_string($message.sysmon_cmd_event), "VolumeShadowCopyTools", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Invoke-ReflectivePEInjection", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Invoke-UserHunter", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Find-GPOLocation", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Invoke-ACLScanner", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Invoke-DowngradeAccount", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Get-ServiceUnquoted", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Get-ServiceFilePermission", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Get-ServicePermission", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Invoke-ServiceAbuse", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Install-ServiceBinary", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Get-RegAutoLogon", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Get-VulnAutoRun", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Get-VulnSchTask", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Get-UnattendedInstallFile", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Get-WebConfig", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Get-ApplicationHost", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Get-RegAlwaysInstallElevated", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Get-Unconstrained", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Add-RegBackdoor", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Add-ScrnSaveBackdoor", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Gupt-Backdoor", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Invoke-ADSBackdoor", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Enabled-DuplicateToken", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Invoke-PsUaCme", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Remove-Update", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Check-VM", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Get-LSASecret", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Get-PassHashes", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Show-TargetScreen", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Port-Scan", true) ||
+	contains(to_string($message.sysmon_cmd_event), "netscan", true) ||
+	contains(to_string($message.sysmon_cmd_event), "psscan", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Invoke-PoshRatHttp", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Invoke-PowerShellTCP", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Invoke-PowerShellWMI", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Add-Exfiltration", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Add-Persistence", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Do-Exfiltration", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Start-CaptureServer", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Invoke-DllInjection", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Invoke-ReflectivePEInjection", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Invoke-ShellCode", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Get-ChromeDump", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Get-ClipboardContents", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Get-FoxDump", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Get-IndexedItem", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Get-Keystrokes", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Get-Screenshot", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Invoke-Inveigh", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Invoke-NetRipper", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Invoke-NinjaCopy", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Out-Minidump", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Invoke-EgressCheck", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Invoke-PSInject", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Invoke-RunAs", true) ||
+	contains(to_string($message.sysmon_cmd_event), "MailRaider", true) ||
+	contains(to_string($message.sysmon_cmd_event), "New-HoneyHash", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Set-MacAttribute", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Get-VaultCredential", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Invoke-DCSync", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Invoke-PowerDump", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Invoke-TokenManipulation", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Exploit-Jboss", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Invoke-ThunderStruck", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Invoke-VoiceTroll", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Set-Wallpaper", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Invoke-InveighRelay", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Invoke-PsExec", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Invoke-SSHCommand", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Get-SecurityPackages", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Install-SSP", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Invoke-BackdoorLNK", true) ||
+	contains(to_string($message.sysmon_cmd_event), "PowerBreach", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Get-GPPPassword", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Get-SiteListPassword", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Get-System", true) ||
+	contains(to_string($message.sysmon_cmd_event), "BypassUAC", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Invoke-Tater", true) ||
+	contains(to_string($message.sysmon_cmd_event), "PowerUp", true) ||
+	contains(to_string($message.sysmon_cmd_event), "PowerView", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Get-RickAstley", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Find-Fruit", true) ||
+	contains(to_string($message.sysmon_cmd_event), "HTTP-Login", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Find-TrustedDocuments", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Invoke-Paranoia", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Invoke-WinEnum", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Invoke-ARPScan", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Invoke-ReverseDNSLookup", true) ||
+	contains(to_string($message.sysmon_cmd_event), "smbscanner", true) ||
+	contains(to_string($message.sysmon_cmd_event), "process call create", true) ||
+	contains(to_string($message.sysmon_cmd_event), "Mimikittenz", true)	
 then
 	// set field
 	set_field("suspicious_cmd_event", true);
