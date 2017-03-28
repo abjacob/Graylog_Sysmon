@@ -29,6 +29,7 @@ sysmon threatintel inflate
 ~~~~
 
 Set Message Processor Configuration to the following order:
+
 Pipeline
 
 Message Filter Chain
