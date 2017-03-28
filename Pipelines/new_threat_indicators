@@ -1,0 +1,9 @@
+rule "threat indicators"
+when
+    // Command Events
+	has_field("sysmon_cmd_event") && contains(to_string($message.sysmon_cmd_parent_file), "EXCEL.exe", true) || contains(to_string($message.sysmon_cmd_parent_file), "WINWORD.exe", true) || contains(to_string($message.sysmon_cmd_parent_file), "POWERPNT.EXE", true) || contains(to_string($message.sysmon_cmd_parent_file), "MSACCESS.EXE", true) || contains(to_string($message.sysmon_cmd_parent_file), "iexplore.exe", true) || contains(to_string($message.sysmon_cmd_parent_file), "chrome.exe", true)  || contains(to_string($message.sysmon_cmd_parent_file), "firefox.exe", true) && (has_field("sysmon_cmd_parent_file") && is_not_null($message.sysmon_data_process) && $message.sysmon_data_process == "C:\\Windows\\System32\\cmd.exe") ||
+	has_field("sysmon_cmd_event") && contains(to_string($message.sysmon_cmd_parent_file), "EXCEL.exe", true) || contains(to_string($message.sysmon_cmd_parent_file), "WINWORD.exe", true) || contains(to_string($message.sysmon_cmd_parent_file), "POWERPNT.EXE", true) || contains(to_string($message.sysmon_cmd_parent_file), "MSACCESS.EXE", true) || contains(to_string($message.sysmon_cmd_parent_file), "iexplore.exe", true) || contains(to_string($message.sysmon_cmd_parent_file), "chrome.exe", true)  || contains(to_string($message.sysmon_cmd_parent_file), "firefox.exe", true) && (has_field("sysmon_cmd_parent_file") && is_not_null($message.sysmon_data_process) && $message.sysmon_data_process == "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe")
+then
+	// set field
+	set_field("suspicious_cmd_event", true);
+end
