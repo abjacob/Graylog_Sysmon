@@ -61,16 +61,16 @@ when
 	// Start Ports
 	(has_field("sysmon_dns_lookup_ip") && is_not_null($message.sysmon_dest_port) && $message.sysmon_dest_port == "22") ||
 	(has_field("sysmon_dns_lookup_ip") && is_not_null($message.sysmon_dest_port) && $message.sysmon_dest_port == "23") ||
-	//(has_field("sysmon_dns_lookup_ip") && is_not_null($message.sysmon_dest_port) && $message.sysmon_dest_port == "3128") ||
-	//(has_field("sysmon_dns_lookup_ip") && is_not_null($message.sysmon_dest_port) && $message.sysmon_dest_port == "9030") ||
+	(has_field("sysmon_dns_lookup_ip") && is_not_null($message.sysmon_dest_port) && $message.sysmon_dest_port == "3128") ||
+	(has_field("sysmon_dns_lookup_ip") && is_not_null($message.sysmon_dest_port) && $message.sysmon_dest_port == "9030") ||
 	(has_field("sysmon_dns_lookup_ip") && is_not_null($message.sysmon_dest_port) && $message.sysmon_dest_port == "1723") ||
 	(has_field("sysmon_dns_lookup_ip") && is_not_null($message.sysmon_dest_port) && $message.sysmon_dest_port == "5800") ||
 	(has_field("sysmon_dns_lookup_ip") && is_not_null($message.sysmon_dest_port) && $message.sysmon_dest_port == "5900") ||
-	//(has_field("sysmon_dns_lookup_ip") && is_not_null($message.sysmon_dest_port) && $message.sysmon_dest_port == "1194") ||
+	(has_field("sysmon_dns_lookup_ip") && is_not_null($message.sysmon_dest_port) && $message.sysmon_dest_port == "1194") ||
 	(has_field("sysmon_dns_lookup_ip") && is_not_null($message.sysmon_dest_port) && $message.sysmon_dest_port == "1701") ||
 	(has_field("sysmon_dns_lookup_ip") && is_not_null($message.sysmon_dest_port) && $message.sysmon_dest_port == "1723") ||
 	(has_field("sysmon_dns_lookup_ip") && is_not_null($message.sysmon_dest_port) && $message.sysmon_dest_port == "1293") ||
-	//(has_field("sysmon_dns_lookup_ip") && is_not_null($message.sysmon_dest_port) && $message.sysmon_dest_port == "4500")
+	(has_field("sysmon_dns_lookup_ip") && is_not_null($message.sysmon_dest_port) && $message.sysmon_dest_port == "4500")
 then
 	// set field
 	set_field("suspicious_net_event", true);
