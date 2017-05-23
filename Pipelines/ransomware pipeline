@@ -748,7 +748,12 @@ when
 	contains(to_string($message.file_created), ".fileiscryptedhard", true) ||
 	contains(to_string($message.file_created), ".blocatto", true) ||
 	contains(to_string($message.file_created), ".8lock8", true) ||
-	contains(to_string($message.file_created), ".777", true)
+	contains(to_string($message.file_created), ".777", true) ||
+	contains(to_string($message.file_created), ".WCRY", true) ||
+	contains(to_string($message.file_created), ".wcry", true) ||
+	contains(to_string($message.file_created), ".WNCRY", true) ||
+    contains(to_string($message.file_created), ".WCRYT", true) ||
+    contains(to_string($message.file_created), ".WNCRYT", true)
 then
 	// set field
 	set_field("ransomware_detected", true);
