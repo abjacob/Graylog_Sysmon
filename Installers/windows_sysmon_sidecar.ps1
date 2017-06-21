@@ -107,8 +107,9 @@ $content = [System.IO.File]::ReadAllText("C:\Program Files\Graylog\collector-sid
 #Install and start sidecar service
 #
 "[+] Installing Graylog Services..."
-Start-Process -FilePath 'C:\Program Files\graylog\collector-sidecar\graylog-collector-sidecar.exe' -Argumentlist '-service install' -Wait -WindowStyle Hidden
-Start-Process -FilePath 'C:\Program Files\graylog\collector-sidecar\graylog-collector-sidecar.exe' -Argumentlist '-service start' -Wait -WindowStyle Hidden
+$Sidecar = 'C:\Program Files\graylog\collector-sidecar\graylog-collector-sidecar.exe'
+Start-Process -FilePath $Sidecar -Argumentlist '-service install' -Wait -WindowStyle Hidden
+Start-Process -FilePath $Sidecar -Argumentlist '-service start' -Wait -WindowStyle Hidden
 
 #
 #Check if sidecar was successfully installed and is running
