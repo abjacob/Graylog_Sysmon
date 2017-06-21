@@ -12,11 +12,9 @@
 #
 #Identify if sysmon's path already exists, if not, creates it
 #
-If(!(test-path 'C:\Program Files\sysmon\'))
-	{
+If(!(test-path 'C:\Program Files\sysmon\'))	{
 	New-Item -ItemType Directory -Force -Path 'C:\Program Files\sysmon\'
 	}
-
 #
 #Prepare to use proxy, remove/comment second line if no proxy needed
 #
@@ -43,13 +41,20 @@ $browser.DownloadFile('https://raw.githubusercontent.com/ion-storm/sysmon-config
 #
 #Install sysmon using ionstorm's Sysmon configuration
 #
-Start-Process 'C:\Program Files\sysmon\sysmon64.exe' -ArgumentList '-accepteula -i "C:\Program Files\sysmon\sysmonconfig-export.xml"' -Wait
+if ((Get-Service sysmon).Status -eq 'Running') {
+		#update sysmon config
+		$IC = '-c'
+	} else {
+		#install new sysmon
+		$IC = '-i'
+	}
+$arguments = "-accepteula $IC 'C:\Program Files\sysmon\sysmonconfig-export.xml'"
+Start-Process -FilePath $sysmon -ArgumentList $arguments -Wait -NoNewWindow
 
 #
 #Check if sysmon was successfully installed and is running
 #
-$running = Get-Services sysmon
-if ($running.Status -eq 'Running') {
+if ((Get-Service sysmon).Status -eq 'Running') {
 	"[+] Sysmon running! Successfully Installed."
 	} else {
 	"[-] Sysmon not running, check for problems..."
@@ -108,9 +113,8 @@ Start-Process -FilePath 'C:\Program Files\graylog\collector-sidecar\graylog-coll
 #
 #Check if sidecar was successfully installed and is running
 #
-"[+] Checking Services..."
-$running = get-service collector-sidecar
-if ($running.Status -eq 'Running') {
+"[+] Checking Services..." 
+if ((Get-Service collector-sidecar).Status -eq 'Running') {
 	"[+] Graylog Sidecar Successfully Installed and Configured!"
 	} else {
 	"[-] Sidecar not running. Check for problems..."
