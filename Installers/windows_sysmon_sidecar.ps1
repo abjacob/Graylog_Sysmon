@@ -5,8 +5,6 @@
 # Based on both ionstorm's Sidecar installer and
 # version of SwiftOnSecurity's Sysmon Config
 #
-# Thanks ionstorm! Sorry for anything that made you block me on twitter!
-#
 #========================================================================== 
 
 #
