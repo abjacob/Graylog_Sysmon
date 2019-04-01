@@ -34,7 +34,7 @@ if ([Environment]::Is64BitProcess) {
 #Downloads ionstorm's Sysmon Config
 #
 "[+] Downloading Sysmon config..."
-$browser.DownloadFile('https://raw.githubusercontent.com/ion-storm/sysmon-config/master/sysmonconfig-export.xml','C:\Program Files\sysmon\sysmonconfig-export.xml')
+$browser.DownloadFile('https://raw.githubusercontent.com/SwiftOnSecurity/sysmon-config/master/sysmonconfig-export.xml','C:\Program Files\sysmon\sysmonconfig-export.xml')
 
 #
 #Install sysmon using ionstorm's Sysmon configuration
